@@ -195,10 +195,19 @@ public class DogsPooGolf {
     //-----------------------------------------------------------------------------------------------------------------------------------------//
     // 6. THROW method - the distance depends on: dog size, kind of food for morning and evening, and extra water
     public static float throwIt (String ds, String dfm, String playersName, String dfe, String dfw) {
-        DogFoodTables dogFoodTables = new DogFoodTables();
-        float distance;
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        float distance = 0.0f;
+        {
+            int mixFoodId = dataBaseHandler.selectIdIf(dfm, dfe, dfw);
 
-        distance = dogFoodTables.foodTables(dfm, dfe, dfw);
+            if (mixFoodId > 1000 && mixFoodId < 2000) distance = (new Random().nextFloat() * (5.25f) + 70.75f);
+            if (mixFoodId > 2000 && mixFoodId < 3000) distance = (new Random().nextFloat() * (10.25f) + 65.75f);
+            if (mixFoodId > 3000 && mixFoodId < 4000) distance = (new Random().nextFloat() * (5.25f) + 65.75f);
+            if (mixFoodId > 4000 && mixFoodId < 5000) distance = (new Random().nextFloat() * (10.25f) + 60.75f);
+            if (mixFoodId > 5000 && mixFoodId < 6000) distance = (new Random().nextFloat() * (5.25f) + 60.75f);
+            if (mixFoodId > 6000 && mixFoodId < 7000) distance = (new Random().nextFloat() * (10.25f) + 55.75f);
+        }
+        
 
         result(distanceBySize(distance, ds), playersName);
         return distance;
