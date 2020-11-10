@@ -1,7 +1,11 @@
 ## Prototype of a game called “DogsPooGolf”. 
 ### *Database version*
 #### MySQL used to connect to database
-changes from the previous `<link>` : <https://github.com/Swimmov/DogsPooGolf> version:
+### *No database version `<link>` : <https://github.com/Swimmov/DogsPooGolf>*
+### *Hibernate JPA version `<link>` : <https://github.com/Swimmov/dogsHibernetJpa>*
+### *Android Apk version `<link>` : <https://github.com/Swimmov/dogsApk>*
+
+changes from the previous (not DB) version:
 
 - class ***DogFoodTables.java***  removed.
 ##### to manage database connection:
